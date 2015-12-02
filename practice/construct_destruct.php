@@ -2,8 +2,6 @@
 
 class User {
 
-    public $username;
-
     function __construct($username, $password) {
         // constructor code goes here
         $this->username = $username;
