@@ -1,11 +1,9 @@
 <?php
 
 // Example usage of scraper:
-
 $url = 'www.cnn.com/2015/12/02/europe/nato-montenegro-membership-invitation/index.html';
 $scraper = new Scraper($url);
 print_r($scraper->produce_json());
-
 
 class Scraper {
 
@@ -14,12 +12,12 @@ class Scraper {
         // Retrieve html from given url
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $this->html = curl_exec($ch);
+        $html = curl_exec($ch);
         curl_close($ch);
         
         // Create DOMDocument object
         $this->dom = new DOMDocument;
-        $this->dom->loadHTML($this->html);
+        $this->dom->loadHTML($html);
     }
 
     // Arrange text content into an array
@@ -43,7 +41,6 @@ class Scraper {
             if ($pos == true) {
                 array_push($images_array, $image_source);
             }
-            
         }
         return $images_array;
     }
