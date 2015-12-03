@@ -1,6 +1,6 @@
 <?php
 
-$url = "http://www.cnn.com/2015/12/02/europe/nato-montenegro-membership-invitation/index.html";
+$url = "www.cnn.com/2015/12/02/europe/nato-montenegro-membership-invitation/index.html";
 $ch = curl_init($url);
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
